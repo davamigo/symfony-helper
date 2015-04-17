@@ -1,0 +1,29 @@
+{##
+ # @IfraktalHelper/Default/examples.html.twig
+ #
+ # array source
+ #}
+
+<h1>Sort collection</h1>
+
+<h2>Examples</h2>
+
+<p>dump(collection)</p>
+
+{{ dump(source) }}
+
+<p>dump(collection | sortCollection('name', 'desc'))</p>
+
+{{ dump(source | sortCollection('name', 'desc')) }}
+
+<p>dump(collection | sortCollection('attr.price'))</p>
+
+{{ dump(source | sortCollection('attr.price')) }}
+
+<p>dump(collection | sortCollection(['attr.size', 'name']))</p>
+
+{{ dump(source | sortCollection(['attr.size', 'name'])) }}
+
+<p>dump(collection | sortCollection(['attr.size', 'attr.price'], 'desc'))</p>
+
+{{ dump(source | sortCollection(['attr.size', 'attr.price'], 'desc')) }}

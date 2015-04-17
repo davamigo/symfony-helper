@@ -1,0 +1,29 @@
+# src/Ifraktal/HelperBundle/Resources/config/services.yml
+
+parameters:
+    ifraktal.helper.collection_normalizer.class:    Ifraktal\HelperBundle\Helper\SortCollection\CollectionNormalizer
+    ifraktal.helper.properties_normalizer.class:    Ifraktal\HelperBundle\Helper\SortCollection\PropertiesNormalizer
+    ifraktal.helper.sort_collection.class:          Ifraktal\HelperBundle\Helper\SortCollection\SortCollection
+    ifraktal.twig.helper.class:                     Ifraktal\HelperBundle\Twig\Extension\IfraktalHelper
+
+services:
+    ifraktal.helper.collection_normalizer:
+        class: "%ifraktal.helper.collection_normalizer.class%"
+        public: false
+
+    ifraktal.helper.properties_normalizer:
+        class: "%ifraktal.helper.properties_normalizer.class%"
+        public: false
+
+    ifraktal.helper.sort_collection:
+        class: "%ifraktal.helper.sort_collection.class%"
+        arguments:
+            - "@ifraktal.helper.collection_normalizer"
+            - "@ifraktal.helper.properties_normalizer"
+
+    ifraktal.twig.helper:
+        class: "%ifraktal.twig.helper.class%"
+        arguments:
+            - "@ifraktal.helper.sort_collection"
+        tags:
+            -  { name: twig.extension }
