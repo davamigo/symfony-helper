@@ -1,7 +1,16 @@
 {
-    "name": "david/helper",
-    "license": "proprietary",
+    "name": "davamigo/symfony-helper-base",
+    "license": "MIT",
     "type": "project",
+    "description": " Some useful functions for Symfony/Twig projects .",
+    "keywords": [ "symfony", "helper", "sort collection" ],
+    "homepage": "https://github.com/davamigo/symfony-helper-base",
+    "authors": [
+        {
+            "name": "David Amigo",
+            "email": "davamigo@gmail.com"
+        }
+    ],
     "autoload": {
         "psr-0": {
             "": "src/"
